@@ -1,1 +1,16 @@
-
+node{
+    
+    
+parallel firstBranch: {
+        stage('one'){
+            git url: https://github.com/Samana1997/paralel-execution.git", branch: 'master'
+        }
+        
+    }, secondBranch: {
+        stage('two'){
+            git url: "https://github.com/Samana1997/paralel-execution.git", branch: 'feature-1'
+        }
+    },
+    failFast: true
+    
+}
